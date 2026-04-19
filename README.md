@@ -161,6 +161,8 @@ You can also adapt the `SKILL.md` text for team-specific rules and keep it in a 
 - "Please follow `karpathy-guidelines` for this task."
 - "List assumptions and tradeoffs first, then make minimal code changes."
 
+Language does not need to be English. You can invoke the same skill constraints in Chinese prompts as well.
+
 ## Key Insight
 
 From Andrej:

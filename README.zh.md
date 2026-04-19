@@ -165,6 +165,8 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 - “请按 `karpathy-guidelines` 的约束来做这个任务。”
 - “先列假设和权衡，再改代码，保持最小改动。”
 
+提示词不需要用英文。你完全可以一直用中文，只要明确提到 `karpathy-guidelines` 约束即可。
+
 ## 如何判断它在起作用
 
 如果你看到以下情况，说明这些指南正在发挥作用：
