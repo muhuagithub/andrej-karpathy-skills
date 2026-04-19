@@ -129,6 +129,40 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 
 This repository includes a committed Cursor project rule ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)) so the same guidelines apply when you open the project in Cursor. See **[CURSOR.md](CURSOR.md)** for setup, using the rule in other projects, and how this relates to Claude Code.
 
+## Using with Codex
+
+If you want Codex to follow the same constraints, register this as a **skill**.
+
+### First-time setup
+
+1. Confirm your Codex skills directory (usually `~/.codex/skills`):
+   ```bash
+   echo "${CODEX_HOME:-$HOME/.codex}/skills"
+   ```
+2. Create a local skill folder:
+   ```bash
+   mkdir -p ~/.codex/skills/karpathy-guidelines
+   ```
+3. Copy this repo's skill definition:
+   ```bash
+   cp skills/karpathy-guidelines/SKILL.md ~/.codex/skills/karpathy-guidelines/SKILL.md
+   ```
+4. Verify the file is installed:
+   ```bash
+   test -f ~/.codex/skills/karpathy-guidelines/SKILL.md && echo "installed"
+   ```
+5. Restart Codex (or start a new session) so skill discovery refreshes.
+6. Mention `karpathy-guidelines` (or ask for Karpathy-style constraints) in your prompt when needed.
+
+You can also adapt the `SKILL.md` text for team-specific rules and keep it in a shared dotfiles repo.
+
+### Prompt examples
+
+- "Please follow `karpathy-guidelines` for this task."
+- "List assumptions and tradeoffs first, then make minimal code changes."
+
+Language does not need to be English. You can invoke the same skill constraints in Chinese prompts as well.
+
 ## Key Insight
 
 From Andrej:
