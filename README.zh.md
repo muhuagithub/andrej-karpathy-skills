@@ -133,6 +133,38 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 
 "目标驱动执行"原则正是捕捉了这一点：将指令式指令转化为带有验证循环的声明式目标。
 
+## 与 Codex 一起使用
+
+如果你希望 Codex 也遵循同样的约束，建议把它注册为 **skill**。
+
+### 从 0 开始（第一次注册 skill）
+
+1. 先确认 Codex 的 skills 目录（通常是 `~/.codex/skills`）：
+   ```bash
+   echo "${CODEX_HOME:-$HOME/.codex}/skills"
+   ```
+2. 创建本地 skill 目录：
+   ```bash
+   mkdir -p ~/.codex/skills/karpathy-guidelines
+   ```
+3. 复制本仓库里的 skill 定义：
+   ```bash
+   cp skills/karpathy-guidelines/SKILL.md ~/.codex/skills/karpathy-guidelines/SKILL.md
+   ```
+4. 检查文件是否复制成功：
+   ```bash
+   test -f ~/.codex/skills/karpathy-guidelines/SKILL.md && echo "installed"
+   ```
+5. 重启 Codex（或开启新会话），让 skill 重新被发现。
+6. 在提示词里提到 `karpathy-guidelines`（或明确要求 Karpathy 风格约束）。
+
+你也可以基于 `SKILL.md` 再加上团队规则，并放到共享 dotfiles 仓库里统一管理。
+
+### 你可以直接这样问 Codex
+
+- “请按 `karpathy-guidelines` 的约束来做这个任务。”
+- “先列假设和权衡，再改代码，保持最小改动。”
+
 ## 如何判断它在起作用
 
 如果你看到以下情况，说明这些指南正在发挥作用：
